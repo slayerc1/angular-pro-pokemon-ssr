@@ -9,7 +9,7 @@ import {
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-pricing-page',
+  selector: 'pricing-page',
   imports: [],
   templateUrl: './pricing-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

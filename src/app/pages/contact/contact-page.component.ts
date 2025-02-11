@@ -7,7 +7,7 @@ import {
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-contact-page',
+  selector: 'contact-page',
   imports: [],
   templateUrl: './contact-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,

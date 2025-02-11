@@ -7,7 +7,7 @@ import {
 import { Meta, Title } from '@angular/platform-browser';
 
 @Component({
-  selector: 'app-about-page',
+  selector: 'about-page',
   imports: [],
   templateUrl: './about-page.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
