@@ -1,4 +1,7 @@
+import { inject } from '@angular/core';
 import { RenderMode, PrerenderFallback, ServerRoute } from '@angular/ssr';
+import { PokemonsService } from './pokemons/services/pokemons.service';
+import { lastValueFrom } from 'rxjs';
 
 export const serverRoutes: ServerRoute[] = [
   {
@@ -6,7 +9,14 @@ export const serverRoutes: ServerRoute[] = [
     renderMode: RenderMode.Prerender,
     fallback: PrerenderFallback.Client,
     async getPrerenderParams() {
-      return [{ id: '1' }, { id: '2' }, { id: '3' }];
+      const pokemonsService = inject(PokemonsService);
+
+      const count = await lastValueFrom(pokemonsService.getPokemonCount());
+      const params = [];
+      for (let i = 1; i <= count; i++) {
+        params.push({ id: i.toString() });
+      }
+      return params;
     },
   },
   {
