@@ -6,18 +6,17 @@ import { lastValueFrom } from 'rxjs';
 export const serverRoutes: ServerRoute[] = [
   {
     path: 'pokemons/:id',
-    renderMode: RenderMode.Prerender,
-    fallback: PrerenderFallback.Client,
-    async getPrerenderParams() {
-      const pokemonsService = inject(PokemonsService);
+    renderMode: RenderMode.Server,
+    // async getPrerenderParams() {
+    //   const pokemonsService = inject(PokemonsService);
 
-      const count = await lastValueFrom(pokemonsService.getPokemonCount());
-      const params = [];
-      for (let i = 1; i <= count; i++) {
-        params.push({ id: i.toString() });
-      }
-      return params;
-    },
+    //   const count = await lastValueFrom(pokemonsService.getPokemonCount());
+    //   const params = [];
+    //   for (let i = 1; i <= count; i++) {
+    //     params.push({ id: i.toString() });
+    //   }
+    //   return params;
+    // },
   },
   {
     path: '**',
