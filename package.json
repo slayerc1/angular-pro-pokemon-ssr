@@ -4,11 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "npm run prerender:routes && ng build",
+    "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:pokemon-ssr": "node dist/pokemon-ssr/server/server.mjs",
-    "prerender:routes": "node scripts/prerender-routes.js"
+    "serve:ssr:pokemon-ssr": "node dist/pokemon-ssr/server/server.mjs"
   },
   "private": true,
   "dependencies": {

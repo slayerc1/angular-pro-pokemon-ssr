@@ -9,12 +9,6 @@ import { Pokemon, PokemonAPIResponse, SimplePokemon } from '../interfaces';
 export class PokemonsService {
   private http = inject(HttpClient);
 
-  public getPokemonCount(): Observable<number> {
-    return this.http
-      .get<PokemonAPIResponse>(`https://pokeapi.co/api/v2/pokemon`)
-      .pipe(map((resp) => resp.count));
-  }
-
   public loadPage(page: number): Observable<SimplePokemon[]> {
     if (page !== 0) {
       --page;
